@@ -1,5 +1,31 @@
 'use strict';
 
+let 
+    btnStart = document.querySelectorAll('#start'),
+    budgetValue = document.getElementsByClassName('budget-value')[0],
+    daybudgetValue = document.getElementsByClassName('daybudget-value')[0],
+    levelValue = document.getElementsByClassName('level-value')[0],
+    expensesValue = document.getElementsByClassName('expenses-value')[0],
+    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value')[0],
+    incomeValue = document.getElementsByClassName('income-value')[0],
+    monthsavingsValue = document.getElementsByClassName('monthsavings-value')[0],
+    yearsavingsValue = document.getElementsByClassName('yearsavings-value')[0],
+
+
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    expensesBtn = document.getElementsByTagName('button')[0],
+    optionalExpensesBtn = document.getElementsByTagName('button')[1],
+    countBtn = document.getElementsByTagName('button')[2],
+    inputExpenses = document.querySelectorAll('optionalexpenses-item'),
+    Income = document.querySelector('#income'),
+    savings = document.querySelector('#savings'),
+    sum = document.querySelector('#sum'),
+    percent = document.querySelector('#percent'),
+    year = document.querySelector('.year'),
+    month = document.querySelector('.month'),
+    day = document.querySelector('.day');
+
+
 let money, time;
 
 function start() {
@@ -74,7 +100,7 @@ let appData = {
 
         let items = prompt("Что принесет дополнительный доход? (перечислите через запятую)", "");
 
-        if (typeof(items) != 'string' || items == "" || typeof(items) == null) {
+        if (typeof (items) != 'string' || items == "" || typeof (items) == null) {
             console.log("Вы ввели некорректные данные или не ввели их вовсе");
         } else {
             appData.income.push(prompt("Может что-то еще?"));
