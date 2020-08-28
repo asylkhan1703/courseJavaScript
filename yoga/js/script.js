@@ -1,8 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-
-
     let infoHeader = document.querySelector('.info-header'),
         infoHeaderTab = document.querySelectorAll('.info-header-tab'),
         tabContent = document.querySelectorAll('.info-tabcontent');
@@ -96,7 +94,21 @@ window.addEventListener('DOMContentLoaded', function () {
 
     setClock('timer', deadline);
 
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
 
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 
 });
 
